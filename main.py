@@ -54,19 +54,21 @@ def check_result():
         print("Please enter right keyword.")
 
 
-i = 0
-print(logo)
-compare_A()
-compare_B()
-show_interface()
-while check_result() == True:
-    clear()
+def game():
+    i = 0
     print(logo)
-    i += 1
     compare_A()
     compare_B()
-    check_result()
-    print(f"You're right! Current score: {i}.")
     show_interface()
-
-print(f"Sorry, that's wrong. Final score: {i}.")
+    while check_result() == True:
+        clear()
+        print(logo)
+        i += 1
+        compare_A()
+        compare_B()
+        check_result()
+        print(f"You're right! Current score: {i}.")
+        show_interface()
+    
+    print(f"Sorry, that's wrong. Final score: {i}.")
+game()
