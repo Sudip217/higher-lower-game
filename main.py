@@ -37,7 +37,6 @@ def show_interface():
     print(f"Compare B: {name2}, a {description2}, from {country2}")
     global p
     p = input("Who has more followers? type 'A' or 'B':").lower()
-    print(p)
 
 
 def check_result():
