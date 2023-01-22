@@ -6,7 +6,7 @@ from replit import clear
 
 
 def compare_A():
-    a = randint(0, len(data))
+    a = randint(0, len(data) - 1)
     first_key = data[a]
     global name1
     name1 = first_key['name']
@@ -39,29 +39,35 @@ def show_interface():
     p = input("Who has more followers? type 'A' or 'B':").lower()
     print(p)
 
+
 def check_result():
-    if p=="a":
-        if follower_count1>follower_count2:
+    if p == "a":
+        if follower_count1 > follower_count2:
             return True
         else:
             return False
-    elif p=="b":
-        if follower_count2>follower_count1:
+    elif p == "b":
+        if follower_count2 > follower_count1:
             return True
         else:
             return False
     else:
         print("Please enter right keyword.")
 
-i=0
+
+i = 0
 print(logo)
 compare_A()
 compare_B()
 show_interface()
-while check_result()==True:
+while check_result() == True:
     clear()
+    print(logo)
+    i += 1
+    compare_A()
+    compare_B()
+    check_result()
     print(f"You're right! Current score: {i}.")
+    show_interface()
 
 print(f"Sorry, that's wrong. Final score: {i}.")
-    
-
